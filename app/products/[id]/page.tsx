@@ -1,4 +1,4 @@
-import BreadCrumbs from "@/components/single-product/BreadCrumbs";
+import Breadcrumbs from "@/components/single-product/Breadcrumbs";
 import { fetchSingleProduct } from "@/utils/actions";
 import Image from "next/image";
 import { formatCurrency } from "@/utils/format";
@@ -12,7 +12,7 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
     const dollarsAmount = formatCurrency(price);
     return (
         <section>
-            <BreadCrumbs name={product.name} />
+            <Breadcrumbs name={name} />
             <div className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
                 {/* IMAGE FIRST COL */}
                 <div className="relative h-full">
