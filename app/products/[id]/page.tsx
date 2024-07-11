@@ -1,4 +1,4 @@
-import BreadCrumbs from "@/components/single-product/BreadCrumbs";
+// import BreadCrumbs from "@/components/single-product/BreadCrumbs";
 import { fetchSingleProduct } from "@/utils/actions";
 import Image from "next/image";
 import { formatCurrency } from "@/utils/format";
@@ -15,7 +15,7 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
 
     return (
         <section>
-            <BreadCrumbs name={name} />
+            {/* <BreadCrumbs name={name} /> */}
             <div className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
                 {/* Image first col  */}
                 <div className="relative h-full">
