@@ -16,6 +16,7 @@ function BreadCrumbs({ name }: { name: string }) {
                         home
                     </BreadcrumbLink>
                 </BreadcrumbItem>
+
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -25,6 +26,7 @@ function BreadCrumbs({ name }: { name: string }) {
                         products
                     </BreadcrumbLink>
                 </BreadcrumbItem>
+
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbPage className="capitalize text-lg">
@@ -35,5 +37,4 @@ function BreadCrumbs({ name }: { name: string }) {
         </Breadcrumb>
     );
 }
-
 export default BreadCrumbs;
