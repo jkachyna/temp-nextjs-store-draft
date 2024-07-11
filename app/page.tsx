@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
+import Hero from "@/components/home/Hero";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
+import { Suspense } from "react";
+import LoadingContainer from "@/components/global/LoadingContainer";
 
 function HomePage() {
     return (
-        <div>
-            <h1>HomePage</h1>
-            <Button
-                variant="outline"
-                size="lg"
-                className="capitalize bg-yellow-500"
-            >
-                click me
-            </Button>
-        </div>
+        <>
+            <Hero />
+            <Suspense fallback={<LoadingContainer />}>
+                <FeaturedProducts />
+            </Suspense>
+        </>
     );
 }
 
