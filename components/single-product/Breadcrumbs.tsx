@@ -7,7 +7,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-function Breadcrumbs({ name }: { name: string }) {
+function BreadCrumbs({ name }: { name: string }) {
     return (
         <Breadcrumb>
             <BreadcrumbList>
@@ -36,4 +36,4 @@ function Breadcrumbs({ name }: { name: string }) {
     );
 }
 
-export default Breadcrumbs;
+export default BreadCrumbs;
