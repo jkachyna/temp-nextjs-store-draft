@@ -2,7 +2,7 @@ import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
 import PriceInput from "@/components/form/PriceInput";
 import ImageInput from "@/components/form/ImageInput";
-import SubmitButton from "@/components/form/Buttons";
+import { SubmitButton } from "@/components/form/Buttons";
 import { createProductAction } from "@/utils/actions";
 import { faker } from "@faker-js/faker";
 import TextAreaInput from "@/components/form/TextAreaInput";
@@ -22,7 +22,7 @@ function CreateProductPage() {
 
     return (
         <section>
-            <h1 className="text-2xl font-semibold mb-8 capitalize">
+            <h1 className="text-2xl mb-8 capitalize">
                 <div className="border p-8 rounded">
                     {/* <form action={createProductAction}>
                         <FormInput
