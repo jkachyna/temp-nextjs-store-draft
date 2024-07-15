@@ -26,5 +26,4 @@ function FavoriteToggleForm({
         </FormContainer>
     );
 }
-
 export default FavoriteToggleForm;

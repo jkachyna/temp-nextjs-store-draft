@@ -228,7 +228,7 @@ export const toggleFavoriteAction = async (prevState: {
                 : "Added to favorites",
         };
     } catch (error) {
-        renderError(error);
+        return renderError(error);
     }
 };
 
