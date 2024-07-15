@@ -315,6 +315,7 @@ export const fetchProductReviewsByUser = async () => {
                 select: {
                     image: true,
                     name: true,
+                    id: true,
                 },
             },
         },

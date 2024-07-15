@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Rating from "./Rating";
 import Comment from "./Comment";
 import Image from "next/image";
+import Link from "next/link";
 
 type ReviewCardProps = {
     reviewInfo: {
@@ -9,6 +10,7 @@ type ReviewCardProps = {
         rating: number;
         name: string;
         image: string;
+        productId: string;
     };
     children?: React.ReactNode;
 };
@@ -27,7 +29,9 @@ function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
                     />
                     <div className="ml-4 ">
                         <h3 className="text-sm font-bold capitalize mb-1">
-                            {reviewInfo.name}
+                            <Link href={`/products/${reviewInfo.productId}`}>
+                                {reviewInfo.name}
+                            </Link>
                         </h3>
                         <Rating rating={reviewInfo.rating} />
                     </div>

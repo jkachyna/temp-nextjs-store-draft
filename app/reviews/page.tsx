@@ -18,7 +18,14 @@ async function ReviewsPage() {
                 {reviews.map((review) => {
                     const { comment, rating } = review;
                     const { name, image } = review.product;
-                    const reviewInfo = { comment, rating, name, image };
+                    const productId = review.product.id;
+                    const reviewInfo = {
+                        comment,
+                        rating,
+                        name,
+                        image,
+                        productId,
+                    };
                     return (
                         <ReviewCard key={review.id} reviewInfo={reviewInfo}>
                             <DeleteReview reviewId={review.id} />
