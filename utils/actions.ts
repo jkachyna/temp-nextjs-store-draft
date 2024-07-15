@@ -184,3 +184,50 @@ export const updateProductImageAction = async (
 
     return { message: "Product Image updated succesfully" };
 };
+
+export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
+    const user = await getAuthUser();
+    const favorite = await db.favorite.findFirst({
+        where: { productId, clerkId: user.id },
+        select: {
+            id: true,
+        },
+    });
+    return favorite?.id || null;
+};
+
+export const toggleFavoriteAction = async (prevState: {
+    productId: string;
+    favoriteId: string | null;
+    pathname: string;
+}) => {
+    const user = await getAuthUser();
+    const { productId, favoriteId, pathname } = prevState;
+
+    try {
+        if (favoriteId) {
+            await db.favorite.delete({
+                where: {
+                    id: favoriteId,
+                },
+            });
+        } else {
+            await db.favorite.create({
+                data: {
+                    productId,
+                    clerkId: user.id,
+                },
+            });
+        }
+
+        revalidatePath(pathname);
+
+        return {
+            message: favoriteId
+                ? "Removed from favorites"
+                : "Added to favorites",
+        };
+    } catch (error) {
+        renderError(error);
+    }
+};
