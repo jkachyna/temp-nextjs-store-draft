@@ -24,10 +24,13 @@ async function ReviewsPage() {
                         rating,
                         name,
                         image,
-                        productId,
                     };
                     return (
-                        <ReviewCard key={review.id} reviewInfo={reviewInfo}>
+                        <ReviewCard
+                            key={review.id}
+                            reviewInfo={reviewInfo}
+                            productId={productId}
+                        >
                             <DeleteReview reviewId={review.id} />
                         </ReviewCard>
                     );

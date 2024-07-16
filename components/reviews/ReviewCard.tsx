@@ -10,12 +10,12 @@ type ReviewCardProps = {
         rating: number;
         name: string;
         image: string;
-        productId: string;
     };
+    productId?: string;
     children?: React.ReactNode;
 };
 
-function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
+function ReviewCard({ reviewInfo, productId, children }: ReviewCardProps) {
     return (
         <Card className="relative">
             <CardHeader>
@@ -29,9 +29,13 @@ function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
                     />
                     <div className="ml-4 ">
                         <h3 className="text-sm font-bold capitalize mb-1">
-                            <Link href={`/products/${reviewInfo.productId}`}>
-                                {reviewInfo.name}
-                            </Link>
+                            {productId ? (
+                                <Link href={`/products/${productId}`}>
+                                    {reviewInfo.name}
+                                </Link>
+                            ) : (
+                                reviewInfo.name
+                            )}
                         </h3>
                         <Rating rating={reviewInfo.rating} />
                     </div>
