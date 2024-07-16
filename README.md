@@ -5396,7 +5396,7 @@ return {
             name: "product name",
             images: ["product image url"],
         },
-        unit_amount: cartItem.product.price * 100, // price in cents
+        unit_amount: cartItem.product.price * 100, // price in cents or the smallest unit of a currency
     },
 };
 ```
